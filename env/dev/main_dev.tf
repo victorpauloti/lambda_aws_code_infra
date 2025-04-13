@@ -11,5 +11,6 @@ module "lambda-dev" {
     layer_name = "layer-requests"
     lambda_environment_variables = {
         "ENV" = "dev"
+        "URL" = "https://loteriascaixa-api.herokuapp.com/api/megasena/latest"
     }
 }

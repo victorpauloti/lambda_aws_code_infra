@@ -1,11 +1,12 @@
 import json
 import requests
 import urllib3
+import os
 
 urllib3.disable_warnings()
 
 def lambda_handler(event, context):
-    url = 'https://loteriascaixa-api.herokuapp.com/api/megasena/latest'
+    url = os.getenv("URL")
     response = requests.get(url, verify=False)
     numeros = json.loads(response.text)['dezenas']
     #print(numeros)
